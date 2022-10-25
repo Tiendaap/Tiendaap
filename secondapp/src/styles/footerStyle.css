@@ -1,0 +1,16 @@
+.footer{
+    align-self: center;
+    position: relative;
+    order: 2;    
+    height: 42px;    
+    justify-content: center;
+    font-size: 1.3rem;
+    font-family: serif;
+    color: white;
+    text-align:center; 
+    width: 100%;
+    min-width: 400px;
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,0) 0%, rgba(88,24,69,1) 100%);
+
+}
