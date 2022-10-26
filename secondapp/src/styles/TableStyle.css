@@ -1,0 +1,32 @@
+Table, th, td{
+ border:1px solid yellowgreen;
+ background-color: white; 
+ border-collapse: collapse;
+}
+
+Table .Table-container{
+    height: 100%;
+	width: 100%;	
+	overflow-y: scroll;
+}
+
+.Table-movimientos{    
+	width: 100%;    
+}
+
+.table-title{
+    font-size: 24px;
+}
+
+.table-header{
+    font-size: 10px;
+}
+
+.movements, .table-footer{
+    font-size: 10px;
+}
+.footer-balance{
+    font-size: 16px;
+    text-align: right;
+    background-color: yellowgreen;
+}

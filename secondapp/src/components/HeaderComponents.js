@@ -1,5 +1,5 @@
 import React from "react"
-import imagen from "../Bin/tienda.png"
+import imagen from "../Bin/tienda2.png"
 
 function Header() {
     return(
