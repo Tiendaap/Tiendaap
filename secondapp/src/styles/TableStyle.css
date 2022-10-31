@@ -19,11 +19,11 @@ Table .Table-container{
 }
 
 .table-header{
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .movements, .table-footer{
-    font-size: 10px;
+    font-size: 12px;
 }
 .footer-balance{
     font-size: 16px;

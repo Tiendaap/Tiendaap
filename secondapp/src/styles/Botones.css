@@ -1,0 +1,27 @@
+.button_finalizar{
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 20%;
+    height: 80px;
+    transition: .3s ease all;
+    padding: 10px;
+}
+.button_finalizar:hover{
+    background: rgb(66, 190, 190);
+}
+.button_cancelar{
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 20%;
+    height: 80px;
+    transition: .3s ease all;
+    padding: 10px;
+ 
+}
+.button_cancelar:hover{
+    background: rgb(66, 190, 190);
+}
+
+
