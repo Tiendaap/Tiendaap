@@ -1,7 +1,8 @@
 import React from "react";
 import Card from "./cardUsuario"
 import Tabla from "./TablaMovimientos"
-
+import Carro from "./Carro"
+import Productos from "./Productos"
 
 function Main(){
     return (
@@ -9,7 +10,8 @@ function Main(){
         <container class="Central_container">
             <Card></Card>
             <container class= "side-view-placer">
-                <Tabla></Tabla>
+            <Productos></Productos>
+            
             </container>
         </container>
         

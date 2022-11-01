@@ -10,6 +10,7 @@ import "../src/styles/footerStyle.css"
 import "../src/styles/cardStyle.css"
 import "../src/styles/MainStyle.css"
 import "../src/styles/TableStyle.css"
+import "../src/styles/CarroStyle.css"
 
 function App() {
   return ( 
