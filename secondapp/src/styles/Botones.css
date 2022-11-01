@@ -2,13 +2,15 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    border-radius: 12px;
     width: 20%;
     height: 80px;
     transition: .3s ease all;
     padding: 10px;
 }
-.button_finalizar:hover{
-    background: rgb(66, 190, 190);
+.button_finalizar:hover , .button_cancelar:hover, .Comprar:hover, .Detalle-button:hover{
+    background: rgb(225, 8, 91);
+    cursor: pointer;
 }
 .button_cancelar{
     align-items: center;
@@ -18,10 +20,16 @@
     height: 80px;
     transition: .3s ease all;
     padding: 10px;
+    border-radius: 12px;
  
 }
-.button_cancelar:hover{
-    background: rgb(66, 190, 190);
+
+.Comprar, .Detalle-button{
+    height:28px;
+    width:60px;
+    border-radius: 6px;
+    
+    
 }
 
 

@@ -1,5 +1,9 @@
 import React from "react"
+
 import imagen from "../Bin/tienda2.png"
+import Admin from "./Admin";
+import User from "./User";
+import {Switch, Route, Redirect, withRouter} from "react-router-dom";
 
 function Header() {
 
@@ -15,15 +19,11 @@ function Header() {
             </div>
             <h1 class="nav-bar-app-name">Tiendaap</h1>
         </div>
-        <nav class="nav-bar-placer-left">
-            <ul class="nav-bar-placer-left-holder">
-                <button
-                >Productos
-                </button>
-                <button>Detalles</button>
-                <button>Ventas</button> 
-            </ul>
-        </nav>
+        <Switch>
+        <Route path="/Admin/home/" component={Admin}></Route>
+        <Route path="/User/home/" component={User}></Route>
+        <Redirect to="Admin/home"></Redirect>
+        </Switch>
     </div>
 </header>
        </>

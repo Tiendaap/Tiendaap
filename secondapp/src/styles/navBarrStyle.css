@@ -75,4 +75,11 @@ body{
 
 }
 
+a{font-size: 1.6rem;
+    font-weight: bold;
+    color: rgb(255, 195, 0);
+    text-decoration: none;
+
+}
+
 

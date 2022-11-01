@@ -6,10 +6,23 @@
     width: 100%;
     height: 100%;
     background-color: transparent;
+    
 }
 .side-view-placer{
     width: 75%;
     height: 82%;
     background-color: rgb(88, 24, 69);
+    overflow-y: scroll;
+    overflow-x: auto;
 
+}
+
+.side-view-placer::-webkit-scrollbar{
+    width: 12px;
+    background-color: rgb(88, 24, 69);
+
+    
+}
+.side-view-placer::-webkit-scrollbar-thumb{
+    background-color: orange;
 }

@@ -36,6 +36,10 @@ function Carro(){
                         <th>13500</th>                        
                     </tr>
             </table>
+            <div class="button-text-container">
+            <button class='button_finalizar'><span>Finalizar compra</span></button>
+            <button class = 'button_cancelar'>Cancelar</button>
+            </div>
         </container>
         
     );

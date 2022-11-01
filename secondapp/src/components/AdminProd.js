@@ -1,7 +1,7 @@
 import React from "react";
 import Articulo from "../Bin/marihuana.png"
 
-function Productos(){
+function AdminProd(){
     return(
         
        
@@ -28,12 +28,10 @@ function Productos(){
                 </div>
                 
             </section>
-            <div>
-                <input  class="Comprar" value="Comprar"  type="submit"/>
-            </div>
+           
         </container>    
             
         )
 }
 
-export default Productos;
+export default AdminProd;

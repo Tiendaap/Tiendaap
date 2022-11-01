@@ -23,7 +23,7 @@ function Card(){
                     <h3>Romarioajb@outlook.com</h3>
                     </div>            
                 </div>
-                
+              
 
             </section>
 
@@ -51,6 +51,20 @@ function Card(){
                 </div>
 
             </section>
+
+
+            <div>
+                
+              <a href="/User/home">
+                 <button>Vista de Usuario</button>
+             </a>  
+             <a href="/Admin/home">
+                 <button>Vista de Admin</button>
+             </a>                                  
+                
+                
+            </div>
+                
         </container>
     );
 }

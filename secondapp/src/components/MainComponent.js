@@ -2,13 +2,12 @@ import React from "react";
 import Card from "./cardUsuario"
 import Tabla from "./TablaMovimientos"
 import Carro from "./Carro"
-import ProductosClientes from "./ProductosClientes";
-import { useState } from "react";
+import Productos from "./Productos"
+import AdminProd from "./AdminProd";
+import Detalles from "./Detalles";
 
+import {Switch, Route, Redirect, withRouter} from "react-router-dom";
 
-
-
-    
 function Main(){
 
     
@@ -17,8 +16,14 @@ function Main(){
         <container class="Central_container">
             <Card></Card>
             <container class= "side-view-placer">
-                  
-                  <ProductosClientes></ProductosClientes>
+                <Switch>
+                <Route path="/Admin/home/Productos" component={AdminProd}></Route>
+                <Route path="/Admin/home/Detalles" component={Detalles}></Route>
+                <Route path="/Admin/home/Ventas" component={Tabla}></Route >
+                <Route path="/User/home/Carrito" component={Carro}></Route >
+                <Route path="/User/home/Productos" component={Productos}></Route >
+                </Switch>
+               
                  </container>
            
         </container>

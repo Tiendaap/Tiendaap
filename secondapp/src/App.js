@@ -4,7 +4,7 @@ import Footer from "./components/FooterComponent"
 import Main from "./components/MainComponent"
 
 
-import { BrowserRouter, Route } from "react-router-dom"
+
 
 
 
@@ -14,9 +14,11 @@ import "../src/styles/cardStyle.css"
 import "../src/styles/MainStyle.css"
 import "../src/styles/TableStyle.css"
 import "../src/styles/CarroStyle.css"
-import "../src/styles/productosClientes.css"
+import "../src/styles/ProductoStyles.css"
 import "../src/styles/Botones.css"
+import "../src/styles/DetallesStyles.css"
 
+import {BrowserRouter} from "react-router-dom";
 
 function App() {
   return ( 
@@ -25,9 +27,15 @@ function App() {
 
 
  <React.Fragment>
+      <BrowserRouter>
       <Header/>
-      <Main>               
-      </Main>  
+      </BrowserRouter>
+     
+      <BrowserRouter>
+      <Main></Main>
+      </BrowserRouter>
+      
+      
       <Footer/>
     </React.Fragment>
 
