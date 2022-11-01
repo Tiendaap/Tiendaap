@@ -1,0 +1,18 @@
+.product-image-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.product-image-placer{
+    width: 30px;
+    height: 30px;
+}
+.button-text-container{
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    justify-content: center;
+    margin-top: 10px;
+
+}

@@ -2,6 +2,9 @@ import React from "react"
 import imagen from "../Bin/tienda2.png"
 
 function Header() {
+
+
+    
     return(
        <> 
 <header class="nav-bar"> 
@@ -14,9 +17,11 @@ function Header() {
         </div>
         <nav class="nav-bar-placer-left">
             <ul class="nav-bar-placer-left-holder">
-                <li>Productos</li>
-                <li>Detalles</li>
-                <li>Ventas</li> 
+                <button
+                >Productos
+                </button>
+                <button>Detalles</button>
+                <button>Ventas</button> 
             </ul>
         </nav>
     </div>
