@@ -1,12 +1,22 @@
-import React from "react";
+import React , {useState} from "react";
 import Producto from "../Bin/marihuana.png"
 
+
+
+
 function Detalle(){
+    const [nombre, setNombre] = useState ("");
+    const [description, setDescription] = useState ("");
+    const [precio, setPrecio] = useState ("");
+    const [stock, setStock] = useState ("");
+    
+
+
     return(
         <container>
             <section class="Detalles-Container-section">
                 
-                <form class="Form-container-Products"action="#">
+                <form class="Form-container-Products"action="#" >
                 <label for="lang">Productos</label>
                 <select name="Productos_tienda" id="lang" size="25">
                     <option>Paco de Marihuana 5g</option>
@@ -26,10 +36,33 @@ function Detalle(){
                 </div>
                 <div>
                     <form class="Labels-Detalles-Conatiner">
-                        <label>Nombre del Producto<input type="text" placeholder="Paco de Marihana 5g" /></label>
-                        <label>Descripción<input type="text" placeholder="Hierba medicinal"/></label>
-                        <label>Precio<input type="text" placeholder="2.700"/></label>
-                        <label>Stock<input type="text"placeholder="15" /></label>
+                        <label>Nombre del Producto
+                            <input 
+                            type="text" 
+                            placeholder="Paco de Marihana 5g" 
+                            value={nombre}  
+                            onChange={(e) => setNombre(e.target.value)}
+                            />
+                            </label>
+                        <label>Descripción<input type="text" placeholder="Hierba medicinal" 
+                        value={description}  
+                            onChange={(e) => setDescription(e.target.value)}
+                        
+                        /></label>
+                        <label>Precio
+                        <input type="text" 
+                        placeholder="2.700"
+                        value={precio}  
+                        onChange={(e) => setPrecio(e.target.value)}
+                        
+                        />
+                        </label>
+                        <label>Stock
+                        <input type="text"placeholder="15"
+                        value={stock}  
+                        onChange={(e) => setStock(e.target.value)} />
+                        </label>
+
                     </form>
                 </div>
 

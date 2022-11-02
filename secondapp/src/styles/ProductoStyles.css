@@ -10,3 +10,28 @@
     justify-content: space-around;
     margin-top: 20px;
 }
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+.product-image{
+    width: 120px;
+    height:220px;
+   
+    margin-left: 12px;
+    margin-right: 12px;   
+    border: 1px solid;
+    border-radius: 4px;
+    
+}
+.row::-webkit-scrollbar{
+    width: 12px;
+    background-color: rgb(88, 24, 69);
+
+    
+}
+.row::-webkit-scrollbar-thumb{
+    background-color: orange;
+}

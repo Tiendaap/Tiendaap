@@ -9,8 +9,8 @@
     
 }
 .side-view-placer{
-    width: 75%;
-    height: 82%;
+    width: 1100px;
+    height: 600px;
     background-color: rgb(88, 24, 69);
     overflow-y: scroll;
     overflow-x: auto;
