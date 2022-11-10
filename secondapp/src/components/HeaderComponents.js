@@ -22,7 +22,7 @@ function Header() {
         <Switch>
         <Route path="/Admin/home/" component={Admin}></Route>
         <Route path="/User/home/" component={User}></Route>
-        <Redirect to="Admin/home"></Redirect>
+        <Redirect to="/Admin/home"></Redirect>
         </Switch>
     </div>
 </header>

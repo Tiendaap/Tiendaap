@@ -4,8 +4,8 @@ import React , {useState, useEffect} from "react";
 function Productos(){
     const [ artCarro, setArtCarro]= useState([]);
     
-    const cuandoClick = () =>{
-        console.log("Evento click")
+    const cuandoClick = (e) =>{
+        console.log(e.target.resultado)
     }
     
     useEffect(() => {
@@ -44,7 +44,7 @@ function Productos(){
                     {
                         artCarro.map( resultado =>(
                             
-                            <div class="Product-card" key={resultado._id} articulo={resultado}>
+                            <div class="Product-card" key={resultado._id} >
                                
                                 <section class="">
                                 <div class="product-image">
@@ -61,7 +61,7 @@ function Productos(){
                                     </div>
                                     <div class="Product-sub-container">
                                         <h1>Stock: </h1>
-                                        <h3>{resultado.stock=0 ? (resultado.stock):( <div> No hay unidades</div>)  }</h3>
+                                        <h3>{resultado.stock>0 ? (resultado.stock):( <div> No hay unidades</div>)  }</h3>
                                     </div>
                                 </div>
 
