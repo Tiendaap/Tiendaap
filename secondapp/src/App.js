@@ -17,6 +17,7 @@ import "../src/styles/CarroStyle.css"
 import "../src/styles/ProductoStyles.css"
 import "../src/styles/Botones.css"
 import "../src/styles/DetallesStyles.css"
+import "../src/styles/Logger.css"
 
 import {BrowserRouter} from "react-router-dom";
 

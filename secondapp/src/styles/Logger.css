@@ -1,0 +1,87 @@
+:root{
+    --white: #FFFFFF;
+    --black: #000000;
+    --dark: #232830;
+    --very-light-pink: #C7C7C7;
+    --text-input-field: #F7F7F7;
+    --hospital-green: #ACD9B2;
+    --ss: 14px;
+    --ms: 16px;
+    --ls: 18px;
+}
+
+.login{
+    width:100%;
+    height:100%;
+    display: grid;
+    place-items: center;
+}
+.contenedor_formato{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    width: 300px;
+    
+}
+.logo{
+    
+    width: 120px;
+    height: 120px;
+    margin-bottom: 32px;
+    justify-self: center;
+    
+    
+}
+.formulario{
+        display: flex;
+        flex-direction: column;
+        
+    }
+.Label {
+    font-size: var(--ss);
+    margin-top: 4px;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+.Input{
+background-color: var(--text-input-field);
+    border: 2px;
+    border-radius: 12px;
+    height: 30px;
+    font-size: var(--ss);
+    padding: 6px;
+    margin-bottom: 4px;
+}
+.Colorprimario{
+    margin-top: 12px;
+    background-color: var(--hospital-green);
+    color:var(--white);
+    font-weight: bold;
+    font-size: var(--ls);
+    width:100%;
+    height: 50px;
+    border-radius: 8px;
+    margin-top: 30px;
+    margin-bottom:8px;
+    border:none;
+    cursor: pointer;
+    align-self: center;
+    justify-self: center;
+}
+
+    
+.Colorsecundario{
+    margin-top: 12px;
+    background-color: var(--white);
+    color:var(--hospital-green);
+    font-weight: bold;
+    font-size: var(--ls);
+    width:100%;
+    height: 50px;
+    border-radius: 8px;
+    margin-top: 30px;
+    margin-bottom:8px;
+    border: 1px solid var(--hospital-green);
+    cursor: pointer;
+    align-self: center;
+    justify-self: center;
+}

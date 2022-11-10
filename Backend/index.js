@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from "dotenv";
 import cors from "cors";
-import rutas from "./Routes/Routes.js"
+import router from "./Routes/logUsuariosRoutes.js"
 import conectarDB from "./config/DB.js"
 
 const PORT = process.env.PORT || 4000;
@@ -9,6 +9,8 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
+
+conectarDB()
 
 
 const dominiosPermitidos = [process.env.FRONTEND_URL];
@@ -24,7 +26,7 @@ const dominiosPermitidos = [process.env.FRONTEND_URL];
 };
 
 //gestión de usuarios
-app.use('/login/home', rutas );
+app.use('/login/home', router );
 
 app.listen(PORT, ()=>{
     console.log(`Servidor Inicializado en el puerto # ${PORT}`);
