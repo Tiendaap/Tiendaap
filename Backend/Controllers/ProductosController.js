@@ -1,8 +1,9 @@
-import Productos from "../Models/Productos";
+import Producto from "../Models/Productos.js";
 import {
     uploadImage,
     deleteImage
 } from '../helper/cloudinary.js';
+import fs from "fs-extra"
 
 
 
@@ -12,7 +13,7 @@ const autenticacion = (req, res) => {
     })
 
 }
-const createProductos = async (req, res) => {
+export const createProductos = async (req, res) => {
     try {
         const { nombre, description, precio, stock } = req.body;
         let image;
@@ -36,7 +37,7 @@ const createProductos = async (req, res) => {
     }
 };
 
-const getProductos = async (req, res) => {
+export const getProductos = async (req, res) => {
     try {
         const productos = await Producto.find();
         res.send(productos);
@@ -45,7 +46,7 @@ const getProductos = async (req, res) => {
         return res.status(500).json({ message: error.message });
     }
 };
-const updateProductos = async (req, res) => {
+export const updateProductos = async (req, res) => {
     try {
         const updatedProduct = await Producto.findByIdAndUpdate(
             req.params.id,
@@ -60,7 +61,7 @@ const updateProductos = async (req, res) => {
     }
 };
 
-const deleteProductos = async (req, res) => {
+export const deleteProductos = async (req, res) => {
     try {
         const productRemoved = await Producto.findByIdAndDelete(req.params.id);
         if (!productRemoved) {
@@ -76,7 +77,7 @@ const deleteProductos = async (req, res) => {
         return res.status(500).json({ message: error.message });
     }
 };
-const getProducto = async (req, res) => {
+export const getProducto = async (req, res) => {
     try {
         const OneProduct = await Producto.findById(req.params.id);
         if (!OneProduct) {
