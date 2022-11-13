@@ -1,3 +1,6 @@
+import Usuario from "../Models/Usuarios.js";
+import emailRegistro from '../helper/emailRegistro.js';
+
 const autenticacion = (req, res) => {
     res.send({
         msg: "Aun no se para que es esta ruta  pero es dedicada a usuarios"
