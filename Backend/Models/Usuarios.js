@@ -49,9 +49,7 @@ const usuarioShema = mongoose.Schema({
     trim: true,
   },
 });
-// Antes de guardar el usuario Hashear el password
-// https://www.npmjs.com/package/bcryptjs
-// https://www.npmjs.com/package/bcrypt
+
 usuarioShema.pre("save", async function (next) {
   if (!this.isModified("password")) {
     next();
