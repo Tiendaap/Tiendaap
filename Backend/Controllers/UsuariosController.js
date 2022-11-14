@@ -55,6 +55,23 @@ export const confirmar = async (req, res)=>{
     }
     };
 
+    export const getUsuario = async (req, res) => {
+        try {
+            const { token } = req.params;
+            const OneUser = await Usuario.findOne({token});
+            if (!OneUser) {
+                return res.sendStatus(404);
+            } else {
+                return res.json({
+                    msg:"Usuario confirmado correctamente",
+                    email: OneUser.email
+                });
+            }
+        } catch (error) {
+            return res.status(500).json({ message: error.message });
+        }
+    };
+
 export {
     autenticacion
 };
