@@ -1,7 +1,7 @@
 import React from "react";
 import Articulo from "../Bin/marihuana.png"
 
-function AdminProd(){
+const AdminProd= () => {
     return(
         
        

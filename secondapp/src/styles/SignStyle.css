@@ -1,0 +1,12 @@
+form .signup{
+        
+        
+    display: flex;
+    flex-direction: column;
+    
+}
+
+ .Signcontainer{
+    display: flex !important;
+    flex-direction: column !important;
+}

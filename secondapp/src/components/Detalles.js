@@ -1,10 +1,7 @@
 import React , {useState} from "react";
-import Producto from "../Bin/marihuana.png"
+import Producto from "../Bin/marihuana.png";
 
-
-
-
-function Detalle(){
+const Detalle= () => {
     const [nombre, setNombre] = useState ("");
     const [description, setDescription] = useState ("");
     const [precio, setPrecio] = useState ("");

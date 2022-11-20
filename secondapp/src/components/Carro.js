@@ -1,7 +1,7 @@
 import React from "react";
 import Articulo from "../Bin/marihuana.png"
 
-function Carro(){
+const Carro= () => {
     return(
         <container class="Table-container">
             <table class="Table-movimientos">

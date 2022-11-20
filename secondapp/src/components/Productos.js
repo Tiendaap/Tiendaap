@@ -11,9 +11,10 @@ function Productos(){
     useEffect(() => {
         const consultarApi = async () =>{
             try{
-                const respuesta = await fetch("https://whispering-wildwood-03076.herokuapp.com/guitarras/")
+                const respuesta = await fetch("http://localhost:4000/admin/home/productos/productos")
                 const resultado= await respuesta.json();
                 setArtCarro(resultado);
+                
             
             }
             catch (error){
@@ -37,6 +38,7 @@ function Productos(){
        
         
         <container >
+           
              {artCarro.length > 0 
              ?
             (
@@ -48,7 +50,7 @@ function Productos(){
                                
                                 <section class="">
                                 <div class="product-image">
-                                    <img src={resultado.imagen.url} alt="Imagen del Articulo" />
+                                    <img src={resultado.image.url} alt="Imagen del Articulo" />
                                 </div>
                                 <div>
                                     <div class="Product-sub-container">
@@ -61,7 +63,12 @@ function Productos(){
                                     </div>
                                     <div class="Product-sub-container">
                                         <h1>Stock: </h1>
-                                        <h3>{resultado.stock>0 ? (resultado.stock):( <div> No hay unidades</div>)  }</h3>
+                                        <h3>{resultado.stock>0 
+                                                ? 
+                                                (resultado.stock)
+                                                :
+                                                ( <div> No hay unidades</div>)  
+                                        }</h3>
                                     </div>
                                 </div>
 

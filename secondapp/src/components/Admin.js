@@ -1,6 +1,6 @@
 import React from "react";
 
-function Admin(){
+const Admin= () => {
     return(
         <nav class="nav-bar-placer-left">
             <ul class="nav-bar-placer-left-holder">

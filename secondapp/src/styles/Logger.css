@@ -72,7 +72,7 @@ background-color: var(--text-input-field);
 .Colorsecundario{
     margin-top: 12px;
     background-color: var(--white);
-    color:var(--hospital-green);
+    color:var(--hospital-green) ;
     font-weight: bold;
     font-size: var(--ls);
     width:100%;
@@ -84,4 +84,11 @@ background-color: var(--text-input-field);
     cursor: pointer;
     align-self: center;
     justify-self: center;
+    text-align:center;
+    padding: 10px 1px 0;
+}
+
+label#titulo {
+    align-self: center;
+    text-align: center;
 }

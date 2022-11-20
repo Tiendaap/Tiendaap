@@ -1,7 +1,7 @@
 import React from "react"
-import Header from "./components/HeaderComponents"
-import Footer from "./components/FooterComponent"
-import Main from "./components/MainComponent"
+import Header from "./Components/HeaderComponents"
+import Footer from "./Components/FooterComponent"
+import Main from "./Components/MainComponent"
 
 
 
@@ -18,6 +18,7 @@ import "../src/styles/ProductoStyles.css"
 import "../src/styles/Botones.css"
 import "../src/styles/DetallesStyles.css"
 import "../src/styles/Logger.css"
+import "../src/styles/SignStyle.css"
 
 import {BrowserRouter} from "react-router-dom";
 
@@ -28,13 +29,13 @@ function App() {
 
 
  <React.Fragment>
-      <BrowserRouter>
+      
       <Header/>
-      </BrowserRouter>
+      
      
-      <BrowserRouter>
+      
       <Main></Main>
-      </BrowserRouter>
+     
       
       
       <Footer/>
