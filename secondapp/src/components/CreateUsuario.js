@@ -42,7 +42,7 @@ const Sign= () => {
           
           try {
             
-            const {data} = await clienteAxios.post('/login/home/create', { nombre, email, password, telefono, direccion } );
+            const {data} = await clienteAxios.post('/login/home', { nombre, email, password, telefono, direccion } );
 
             console.log(data);
 

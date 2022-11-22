@@ -10,9 +10,9 @@ const Confirmar = () => {
     const [alerta, setAlerta] = useState({});
     const params = useParams();
     const { id } = params;
-    // console.log(id);
+    console.log(id);
     let token = id;
-    //console.log(token);
+    console.log(token);
     useEffect(() => {
         const confirmarCuenta = async () => {
             try {

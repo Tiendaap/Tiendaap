@@ -8,6 +8,9 @@ import Main from "./Components/MainComponent"
 
 
 
+
+
+
 import "../src/styles/navBarrStyle.css"
 import "../src/styles/footerStyle.css"
 import "../src/styles/cardStyle.css"
@@ -20,9 +23,11 @@ import "../src/styles/DetallesStyles.css"
 import "../src/styles/Logger.css"
 import "../src/styles/SignStyle.css"
 
-import {BrowserRouter} from "react-router-dom";
+
 
 function App() {
+  
+  console.log(process.env.REACT_APP_BACKEND_URL)
   return ( 
    
         

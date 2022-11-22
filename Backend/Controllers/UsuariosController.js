@@ -1,5 +1,6 @@
 import Usuario from "../Models/Usuarios.js";
 import emailRegistro from '../helper/emailRegistro.js';
+import generarJWT from "../helper/generarJWT.js";
 
 const autenticacion = (req, res) => {
     res.send({
@@ -55,7 +56,7 @@ export const confirmar = async (req, res)=>{
     }
     };
 
-    export const getUsuario = async (req, res) => {
+export const getUsuario = async (req, res) => {
         try {
             const { token } = req.params;
             const OneUser = await Usuario.findOne({token});
@@ -71,6 +72,53 @@ export const confirmar = async (req, res)=>{
             return res.status(500).json({ message: error.message });
         }
     };
+
+export const autenticar = async (req, res) => {
+    const { email, password } = req.body;
+    const usuario = await Usuario.findOne({ email });
+    if (!usuario) {
+    const error = new Error("Usuario no existe");
+    return res.status(403).json({ msg: error.message });
+    }
+    // Comprobar si el usuario esta confirmado o no
+    if (!usuario.confirmado) {
+    const error = new Error("Tu cuenta no ha sido confirmada");
+    return res.status(403).json({ msg: error.message });
+    }
+    // Autenticar el usuario
+    // Revisar el password si es correcto
+    if (await usuario.comprobarPassword(password)) {
+    // Auntenticar JWT
+    // https://jwt.io/
+    res.json({
+        usuario,
+        token: generarJWT(usuario._id),
+        msg: "Usuario auntenticado",
+    });
+    } else {
+    const error = new Error("el password es incorrecto");
+    return res.status(403).json({ msg: error.message });
+    }
+
+};
+export const perfil = (req, res) => {
+  //Extraemos los datos del usuario almacenado en el servidor de nodejs
+  //console.log(req.usuario);
+  const { usuario } = req;
+  try {
+    res.status(200).json({
+      usuario,
+    });
+  } catch (error) {
+    return res.status(404).json({
+      status: "error",
+      error: error.message,
+    });
+  }
+};
+
+
+
 
 export {
     autenticacion
