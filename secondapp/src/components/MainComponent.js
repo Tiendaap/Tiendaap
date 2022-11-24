@@ -9,7 +9,9 @@ import Detalles from "./Detalles";
 import Logger from "./Loggin";
 import Sign from "./CreateUsuario"
 import Confirmar from "./Confirmar";
+import Olvido from "./CambiarPassword";
 import {AuthProvider} from "../context/AuthProvider.jsx";
+import { UsuariosProvider } from "../context/UsuariosProvider.jsx";
 
 import {Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
 
@@ -35,6 +37,7 @@ function Main(){
                     <Route path="/Admin/home/Ventas" element={<Tabla/>}></Route >
                     <Route path="/User/home/Carrito" element={<Carro/>}></Route >
                     <Route path="/User/home/Productos" element={<Productos/>}></Route >
+                    <Route path="/loggin/home/Contraseña" element={<Olvido/>}/>
                     <Route path="/loggin/home/" element={<Logger/>}/>
                         <Route path="*" element={ <Navigate to="/loggin/home/" replace={true} />} />
                 

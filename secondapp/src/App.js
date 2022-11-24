@@ -3,6 +3,8 @@ import Header from "./Components/HeaderComponents"
 import Footer from "./Components/FooterComponent"
 import Main from "./Components/MainComponent"
 
+import {AuthProvider} from "./context/AuthProvider.jsx";
+
 
 
 
@@ -38,8 +40,9 @@ function App() {
       <Header/>
       
      
-      
+      <AuthProvider>
       <Main></Main>
+      </AuthProvider>
      
       
       

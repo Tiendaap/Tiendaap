@@ -2,7 +2,29 @@ import React from "react";
 import tendero from "../Bin/limpiador.png";
 import tiendaColor from "../Bin/Mi_tienda.png";
 
+
+import { useEffect } from "react";
+import useAuth from "../hooks/useAuth";
+
+
+
+
+
+  
+
 function Card(){
+    const { auth} = useAuth();    
+    const usuario = auth.usuario
+
+    
+
+    useEffect(() => {
+        
+        console.log(auth);
+        
+      }, [auth]);
+
+
     return (
         <container class="Card-Conatiner">
             <section class="upper-Card-Container-section">
@@ -11,16 +33,31 @@ function Card(){
                 </div>
                 <div class="user-general-Data-upper-container">
                     <div class="user-sub-container">
-                    <h1>Usuario:</h1>
-                    <h3>Alipser</h3>
-                    </div>
-                    <div class="user-sub-container">
                     <h1>Nombre:</h1>
-                    <h3>Romario André Julio Beltrán</h3>
+                    {usuario === undefined
+                        
+                                                ? 
+                                                (<div></div>)
+                                                :
+                                                (<h3>{`${auth.usuario.nombre}`}</h3>)}
                     </div>
                     <div class="user-sub-container">
-                    <h1>Correo: </h1>
-                    <h3>Romarioajb@outlook.com</h3>
+                    <h1>Correo</h1>
+                    {usuario === undefined
+                        
+                        ? 
+                        (<div></div>)
+                        :
+                        (<h3>{`${auth.usuario.email}`}</h3>)}
+                    </div>
+                    <div class="user-sub-container">
+                    <h1>Telefono: </h1>
+                    {usuario === undefined
+                        
+                        ? 
+                        (<div></div>)
+                        :
+                        (<h3>{`${auth.usuario.telefono}`}</h3>)}
                     </div>            
                 </div>
               
@@ -54,13 +91,6 @@ function Card(){
 
 
             <div>
-                
-              <a href="/User/home">
-                 <button>Vista de Usuario</button>
-             </a>  
-             <a href="/Admin/home">
-                 <button>Vista de Admin</button>
-             </a>                                  
                 
                 
             </div>

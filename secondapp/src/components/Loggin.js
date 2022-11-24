@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../Bin/tienda2.png";
 
-import { Link, useNavigate} from 'react-router-dom'
+import { useNavigate} from 'react-router-dom'
 import { useState } from 'react';
 import useAuth from "../hooks/useAuth.jsx";
 import Alerta from './alerta.js';
@@ -13,7 +13,7 @@ const Logger= () => {
   const [ password, setPassword ] = useState('');
   const [ alerta, setAlerta ] = useState({});
   const { setAuth } = useAuth();
-  const navigate= useNavigate;
+  const navigate= useNavigate();
   
 
   const handleSudmit = async (e) =>{
@@ -24,27 +24,36 @@ const Logger= () => {
     return;
     };
     // Auntenticar al usuario
+    
     try {
-    const { data } = await clienteAxios.post('usuarios/login', {
-    email,
-    password
-    });
-    localStorage.setItem('token', data.token);
-    console.log(data);
-    
-    setAuth(data);
-    navigate('/Admin/home/Productos');
+            const { data } = await clienteAxios.post('login/home/login', {
+                email,
+                password
+            });
 
-    
+            localStorage.setItem('token', data.token);
 
-    } catch (error) {
-    setAlerta({
-    msg: error.response.data.msg,
-    error: true
+            console.log(data.msg);
+            // Validar la redireccion
+            setAuth(data);
+            if(data.usuario.rol === "admin"){
+              navigate('/Admin/home/Productos');
+              window.location.reload(true)
+            }else{
+              navigate('/User/home/Productos');
+              window.location.reload(true)
+            }
+            
+        } catch (error) {
+          console.log(error);
+          setAlerta({
+            msg: error.response.data.msg,
+            error: true
     });
-    }
-    }
-    const { msg } = alerta;
+}
+};
+
+const { msg } = alerta;
 
     return (
         <div class="login">
@@ -85,12 +94,12 @@ const Logger= () => {
                 onChange={ e => setPassword(e.target.value) }
               />
 
-              <input type="submit" value="Log in" class="Colorprimario loginbut" />
+              <input type="submit" value="Login" class="Colorprimario loginbut" />
             </form>
     
             
     
-            <a href="Contraseña.html" class="footer">
+            <a href="/loggin/home/Contraseña" class="footer">
               Forgot my password?
             </a>
     

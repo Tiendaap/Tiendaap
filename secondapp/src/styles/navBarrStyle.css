@@ -57,7 +57,7 @@ body{
 }
 .nav-bar-placer-left{
     min-width: 250px;
-    max-width: 320px;
+    max-width: 450px;
     align-self: flex-end;
     padding: 14px;
     order:2;
@@ -71,6 +71,8 @@ body{
     font-size: 1.6rem;
     font-weight: bold;
     color: rgb(255, 195, 0);
+    width:100%;
+    margin-right: 60px;
 
 
 }

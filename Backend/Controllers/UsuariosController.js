@@ -56,6 +56,7 @@ export const confirmar = async (req, res)=>{
     }
     };
 
+
 export const getUsuario = async (req, res) => {
         try {
             const { token } = req.params;
@@ -116,7 +117,140 @@ export const perfil = (req, res) => {
     });
   }
 };
+export const usuarioRegistrados = async (req, res) =>{
+    
+    const usuarios = await Usuario.find();
 
+    res.json(usuarios);
+
+    // console.log(usuarios);
+};
+export const actualizarPassword = async (req, res) => {
+    // Leer los datos
+    const { id } = req.usuario;
+    const { pwd_actual, pwd_nuevo } = req.body;
+  
+    // Comprobar que el veterinario existe
+    const usuario = await Usuario.findById(id);
+    if (!usuario) {
+      const error = new Error("Hubo un error");
+      return res.status(400).json({ msg: error.message });
+    }
+  
+    // Comprobar su password
+    if (await usuario.comprobarPassword(pwd_actual)) {
+      // Almacenar el nuevo password
+  
+      usuario.password = pwd_nuevo;
+      await usuario.save();
+      res.json({ msg: "Password Almacenado Correctamente" });
+    } else {
+      const error = new Error("El Password Actual es Incorrecto");
+      return res.status(400).json({ msg: error.message });
+    }
+};
+export const actualizarPerfil = async (req, res) => {
+    const { id } = req.params;
+    const usuario = await Usuario.findById(id);
+  
+    if (!usuario) {
+      return res.status(404).json({ msg: "No Encontrado" });
+    }
+  
+    // if (paciente.veterinario._id.toString() !== req.veterinario._id.toString()) {
+    //   return res.json({ msg: "Accion no válida" });
+    // }
+  
+    // Actualizar Usuario
+    usuario.nombre = req.body.nombre || usuario.nombre;
+    usuario.email = req.body.email || usuario.email;
+    usuario.password = req.body.password || usuario.password;
+    usuario.telefono = req.body.telefono || usuario.telefono;
+    usuario.direccion = req.body.direccion || usuario.direccion;
+    usuario.web = req.body.web || usuario.web;
+  
+    try {
+      const usuarioActualizado = await usuario.save();
+      res.json(usuarioActualizado);
+    } catch (error) {
+      console.log(error);
+    }
+};
+export const olvidePassword = async (req, res) =>{
+    const { email } = req.body; 
+
+    const existeUsuario = await Usuario.findOne({email});
+
+    if(!existeUsuario){
+        const error = new Error('El usuario no existe');
+        return res.status(400).json({
+            status: 'error',
+            msg: error.message
+        });
+    };
+
+    try {
+        existeUsuario.token = generarId()
+        await existeUsuario.save();
+
+        // Enviar email con Instrucciones
+        emailOlvidePassword({
+            email,
+            nombre: existeUsuario.nombre,
+            token: existeUsuario.token
+        });
+
+        res.json({msg: "Hemos enviado un email con las instrucciones"});    
+
+    } catch (error) {
+        return res.status(404).json({
+            status: 'error',
+            error: error.message
+        });
+    }
+};
+export const nuevoPassword = async (req, res) =>{
+    const { token } = req.params;
+    const { password } = req.body;
+
+    const usuario = await Usuario.findOne({token});
+    if(!usuario){
+        const error = new Error('Hubo un error');
+        return res.status(400).json({
+            status: 'error',
+            msg: error.message
+        });
+    };
+
+    try {
+        usuario.token = null;
+        usuario.password = password;
+        await usuario.save(); 
+        res.json({msg: "Password modificado correctamente"});       
+    } catch (error) {
+        console.log("error: ", error.message);
+        return res.status(404).json({
+            status: 'error',
+            error: error.message
+        });
+    };
+};
+export const comprobarToken = async (req, res) =>{
+    const { token } = req.params;
+    
+    const tokenValido = await Usuario.findOne({token});
+
+    if(tokenValido){
+        res.json({msg: "Usuario valido"});
+    }else{
+        const error = new Error('Token no valido');
+        return res.status(400).json({
+            status: 'error',
+            msg: error.message
+        });
+    }
+
+};
 
 
 

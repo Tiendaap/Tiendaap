@@ -4,7 +4,9 @@ import Articulo from "../Bin/marihuana.png"
 const Carro= () => {
     return(
         <container class="Table-container">
+            
             <table class="Table-movimientos">
+                
                     <tr class="table-title">
                         <th colspan="5">Carro de Compras</th>
                     </tr>

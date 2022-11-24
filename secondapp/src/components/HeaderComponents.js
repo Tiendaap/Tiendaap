@@ -4,6 +4,7 @@ import imagen from "../Bin/tienda2.png"
 import Admin from "./Admin";
 import User from "./User";
 import { Route, Routes, BrowserRouter} from "react-router-dom";
+import {AuthProvider} from "../context/AuthProvider.jsx";
 
 function Header(){
 
@@ -21,10 +22,12 @@ function Header(){
         </div>
         
         <BrowserRouter>
+        <AuthProvider>
             <Routes>
-            <Route path="/Admin/home/*" element={<Admin/>}></Route>
-            <Route path="/User/home/*" element={<User/>}></Route>
+                <Route path="/Admin/home/*" element={<Admin/>}></Route>
+                <Route path="/User/home/*" element={<User/>}></Route>
             </Routes>
+        </AuthProvider>
         </BrowserRouter>
         
         
