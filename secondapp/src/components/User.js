@@ -14,11 +14,7 @@ function User(){
         <nav class="nav-bar-placer-left">
             <ul class="nav-bar-placer-left-holder">
             <a href="/User/home/Carrito">
-            <div class="cart">
-                
-                
-                <div id="cartAmount" class="cartAmount">0</div>
-            </div>
+           
             </a>
             <a href="/User/home/Carrito">Carrito de Compras </a>
             

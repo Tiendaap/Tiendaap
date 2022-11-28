@@ -1,36 +1,61 @@
-import React , {useState} from "react";
-import Producto from "../Bin/marihuana.png";
+import React , {useState, useEffect} from "react";
+import useItems from "../hooks/useItems.jsx"
 
 const Detalle= () => {
     const [nombre, setNombre] = useState ("");
     const [description, setDescription] = useState ("");
     const [precio, setPrecio] = useState ("");
     const [stock, setStock] = useState ("");
-    
+    const value = useItems();
+    const Productos = value.Productos
+   
 
 
     return(
         <container>
+
             <section class="Detalles-Container-section">
                 
-                <form class="Form-container-Products"action="#" >
-                <label for="lang">Productos</label>
-                <select name="Productos_tienda" id="lang" size="25">
-                    <option>Paco de Marihuana 5g</option>
-                    <option>Producto 2</option>
-                    <option>Producto 3</option>
-                    <option>Producto 4</option>
-                    <option>Producto 5</option>
-                    
-                </select>
-                <input type="submit" value="Detalle" class="Detalle-button" />
-                </form>
-            
+                
+             {Productos.length > 0 
+             ?
+            (
+                ( <div  class="row">
+                    <label for="lang">Productos</label>
+                    <form class="Form-container-Products"action="#" >
+                    <select name="Productos_tienda" id="lang" size="25">                    
+                    {
+                        Productos.map( resultado =>(                           
+                
+                    <option>{resultado.nombre}</option>      
+
+                        ))
+                    }
+                    <option>Nuevo Producto</option>
+                    </select>
+                    <input type="submit" value="Detalle" class="Detalle-button" />
+            </form>
+            </div>
+                )
+            )
+            :
+            (<option>Nuevo Producto</option>)
+        }
+            </section>
+
+            <section class="Detalles-Container-section">
+                
+                
+                
                 <div>
                     <div class="Deattle_Product_image">
-                        <img src={Producto} alt="Foto de PRoducto" />
+                        <img alt="Foto de PRoducto" />
                     </div>
                 </div>
+
+            </section>
+
+            <section class="Detalles-Container-section">
                 <div>
                     <form class="Labels-Detalles-Conatiner">
                         <label>Nombre del Producto
@@ -65,13 +90,11 @@ const Detalle= () => {
 
             </section>
 
-            <section>
-                <div class="button-text-container">
-                    <button class='button_finalizar'><span>Modificar</span></button>
-                    <button class = 'button_cancelar'>Nuevo</button>
-                </div>
-            </section>
+            
         </container>
+
+
+
         );
 }
 

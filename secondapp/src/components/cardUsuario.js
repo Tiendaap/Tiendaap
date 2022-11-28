@@ -18,11 +18,7 @@ function Card(){
 
     
 
-    useEffect(() => {
-        
-        console.log(auth);
-        
-      }, [auth]);
+    
 
 
     return (

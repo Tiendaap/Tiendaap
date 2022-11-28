@@ -11,6 +11,7 @@ import Sign from "./CreateUsuario"
 import Confirmar from "./Confirmar";
 import Olvido from "./CambiarPassword";
 import {AuthProvider} from "../context/AuthProvider.jsx";
+import {ItemsProvider} from "../context/DataProvider.jsx";
 import { UsuariosProvider } from "../context/UsuariosProvider.jsx";
 
 import {Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
@@ -28,6 +29,7 @@ function Main(){
             
             <BrowserRouter>
            <AuthProvider>
+            <ItemsProvider>
             <Routes>
                 
                     <Route path="/sign_up/home/" element={<Sign/>}/>
@@ -42,6 +44,7 @@ function Main(){
                         <Route path="*" element={ <Navigate to="/loggin/home/" replace={true} />} />
                 
             </Routes>
+            </ItemsProvider>
             </AuthProvider>
             </BrowserRouter>
            

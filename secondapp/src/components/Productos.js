@@ -1,38 +1,20 @@
 import React , {useState, useEffect} from "react";
+import useItems from "../hooks/useItems.jsx"
+
+
+//productos.js
+
 //import Articulo from "../Bin/marihuana.png"
 
 function Productos(){
-    const [ artCarro, setArtCarro]= useState([]);
+    const totalFetch= useItems()
+    const addCarrito = totalFetch.addCarrito;
+    const artCarro=totalFetch.Productos
     
-    const cuandoClick = (e) =>{
-        console.log(e.target.resultado)
-    }
     
-    useEffect(() => {
-        const consultarApi = async () =>{
-            try{
-                const respuesta = await fetch("http://localhost:4000/admin/home/productos/productos")
-                const resultado= await respuesta.json();
-                setArtCarro(resultado);
-                
-            
-            }
-            catch (error){
-                console.log("Error" + error.message)
-            }
-        };
-
-       
-
-
-        consultarApi()
-    }
-        ,[])
-
-       
-
-
-
+    const [ cartItems, setCarItems]=useState([]);
+    
+      
     return(
        
        
@@ -76,7 +58,8 @@ function Productos(){
                                 
                                     
                                     <button class="Comprar" 
-                                     onClick={cuandoClick}>
+                                     onClick={() => addCarrito(resultado._id)}
+                                     >
                                         Comprar
                                     </button>
                                     

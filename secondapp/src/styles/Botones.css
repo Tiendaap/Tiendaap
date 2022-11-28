@@ -8,7 +8,7 @@
     transition: .3s ease all;
     padding: 10px;
 }
-.button_finalizar:hover , .button_cancelar:hover, .Comprar:hover, .Detalle-button:hover{
+.add:hover, .less:hover, .button_finalizar:hover , .button_cancelar:hover, .Comprar:hover, .Detalle-button:hover{
     background: rgb(225, 8, 91);
     cursor: pointer;
 }
@@ -31,5 +31,18 @@
     
     
 }
+
+.add, .less{
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 12px;
+    width: 20px ;
+    height: 20px;
+    transition: .3s ease all;
+    
+}
+
+
 
 
